@@ -1,0 +1,14 @@
+{
+  "document-version": "2021-05-13",
+  "labels": [
+    {
+      "label": "Positive"
+    },
+    {
+      "label": "Negative"
+    },
+    {
+      "label": "Neutral"
+    }
+  ]
+}

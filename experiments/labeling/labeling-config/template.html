@@ -1,0 +1,34 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<crowd-form>
+  <crowd-classifier
+    name="crowd-classifier"
+    categories="{{ task.input.labels | to_json | escape }}"
+    header="classify text"
+  >
+    <classification-target style="white-space: pre-wrap">
+      {{ task.input.taskObject }}
+    </classification-target>
+    <full-instructions header="Text Categorization Instructions">
+      <p>
+        <strong>Positive</strong> sentiment include: joy, excitement, delight
+      </p>
+      <p>
+        <strong>Negative</strong> sentiment include: anger, sarcasm, anxiety
+      </p>
+      <p>
+        <strong>Neutral</strong>: neither positive or negative, such as stating
+        a fact
+      </p>
+      <p><strong>N/A</strong>: when the text cannot be understood</p>
+      <p>
+        When the sentiment is mixed, such as both joy and sadness, use your
+        judgment to choose the stronger emotion.
+      </p>
+    </full-instructions>
+
+    <short-instructions>
+      Choose the category that is expressed by the text.
+    </short-instructions>
+  </crowd-classifier-multi-select>
+</crowd-form>
